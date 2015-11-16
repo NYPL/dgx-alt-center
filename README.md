@@ -1,7 +1,3 @@
-NYPL NPM Boilerplate
+NYPL Alt Center
 
-Quick steps:
-1. Clone this repo
-2. Remove the .git file
-3. `git init`
-4. Add remote, commit, push, be happy.
+For one source of Alt for component and app Stores and Actions.

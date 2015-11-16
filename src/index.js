@@ -1,12 +1,5 @@
-var nyplModule;
+import Alt from 'alt';
 
-function exampleFun(param) {
-  return param;
-};
+const alt = new Alt();
 
-nyplModule = {
-  exampleFun: exampleFun,
-  exampleVar: 'This is an example variable'
-};
-
-module.exports = nyplModule;
+export default alt

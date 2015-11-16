@@ -1,16 +1,17 @@
 {
-  "name": "dgx-npm-boilerplate",
+  "name": "dgx-alt-center",
   "version": "0.0.1",
-  "description": "NPM Boilerplate",
-  "main": "src/index.js",
+  "description": "NYPL Alt center repo",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "node_modules/.bin/webpack -p --config webpack.config.js"
+    "build": "node_modules/.bin/webpack -p --config webpack.config.js",
+    "babel-build": "babel src -d dist"
   },
   "author": "Edwin Guzman <edwinguzman@nypl.org>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/NYPL/dgx-npm-boilerplate.git"
+    "url": "git+https://bitbucket.org/NYPL/dgx-alt-center.git"
   },
   "keywords": [
     "webpack",
@@ -21,6 +22,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "alt": "^0.17.9",
     "babel-core": "^5.8.30",
     "babel-loader": "^5.3.2",
     "clean-webpack-plugin": "^0.1.3",
