@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-### v0.0.3
+### v0.1.0
 * Using exact npm versions for packages
 * Using the es2015 babel preset
 * Updating the alt version

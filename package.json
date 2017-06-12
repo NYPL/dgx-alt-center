@@ -1,6 +1,6 @@
 {
   "name": "dgx-alt-center",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "NYPL Alt center repo",
   "main": "dist/index.min.js",
   "scripts": {
