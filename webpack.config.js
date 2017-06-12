@@ -6,7 +6,9 @@ module.exports = {
   entry: './index.js',
   output: {
     filename: 'index.min.js',
-    path: __dirname + '/dist'
+    path: __dirname + '/dist',
+    libraryTarget: 'umd',
+    library: 'dgxAltCenter'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -16,7 +18,10 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader']
+        loader: 'babel',
+        query: {
+          presets: ['es2015']
+        }
       }
     ]
   },
