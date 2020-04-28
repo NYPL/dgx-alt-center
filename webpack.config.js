@@ -6,12 +6,12 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 module.exports = {
   entry: {
     'dgx-alt-center': [
-      path.resolve(__dirname, 'src/index.js')
-    ]
+      path.resolve(__dirname, 'src/index.js'),
+    ],
   },
   output: {
     filename: 'index.min.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, '/dist'),
     libraryTarget: 'umd',
     library: 'dgxAltCenter'
   },
