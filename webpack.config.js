@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 
@@ -13,10 +12,10 @@ module.exports = {
     filename: 'index.min.js',
     path: path.join(__dirname, '/dist'),
     libraryTarget: 'umd',
-    library: 'dgxAltCenter'
+    library: 'dgxAltCenter',
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
   module: {
     rules: [
@@ -25,10 +24,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env']
-        }
-      }
-    ]
+          presets: ['@babel/preset-env'],
+        },
+      },
+    ],
   },
   // Minification (Utilized in Production)
   optimization: {
@@ -42,6 +41,6 @@ module.exports = {
   },
   plugins: [
     // Cleans the Dist folder after every build.
-    new CleanWebpackPlugin()
-  ]
-}
+    new CleanWebpackPlugin(),
+  ],
+};
