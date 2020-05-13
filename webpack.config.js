@@ -13,7 +13,7 @@ module.exports = {
     path: path.join(__dirname, '/dist'),
     libraryTarget: 'umd',
     library: 'dgxAltCenter',
-    globalObject: "window",
+    globalObject: 'this',
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
