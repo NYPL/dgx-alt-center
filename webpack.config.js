@@ -1,39 +1,47 @@
-var webpack = require('webpack');
-var cleanBuild = require('clean-webpack-plugin');
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-  context: __dirname + '/src',
-  entry: './index.js',
+  entry: {
+    'dgx-alt-center': [
+      path.resolve(__dirname, 'src/index.js'),
+    ],
+  },
   output: {
     filename: 'index.min.js',
-    path: __dirname + '/dist',
+    path: path.join(__dirname, '/dist'),
     libraryTarget: 'umd',
-    library: 'dgxAltCenter'
+    library: 'dgxAltCenter',
+    globalObject: 'this',
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015']
-        }
-      }
-    ]
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+        },
+      },
+    ],
+  },
+  // Minification (Utilized in Production)
+  optimization: {
+    minimizer: [
+      new TerserWebpackPlugin({
+        terserOptions: {
+          warnings: false,
+        },
+      }),
+    ],
   },
   plugins: [
     // Cleans the Dist folder after every build.
-    new cleanBuild(['dist']),
-    // Minification (Utilized in Production)
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress: {
-        warnings: false
-      }
-    })
-  ]
-}
+    new CleanWebpackPlugin(),
+  ],
+};
