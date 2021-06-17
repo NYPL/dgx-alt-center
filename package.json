@@ -10,15 +10,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/NYPL/dgx-alt-center.git"
+    "url": "git+https://github.com/NYPL/dgx-alt-center.git"
   },
   "keywords": [
     "webpack",
     "boilerplate"
   ],
-  "bugs": {
-    "url": "https://github.com//issues"
-  },
   "dependencies": {
     "alt": "0.18.2"
   },
